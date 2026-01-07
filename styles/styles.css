@@ -144,6 +144,63 @@ body {
     margin: 20px 0;
 }
 
+
+.container__button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    font-family: "Geist Sans", sans-serif;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: all 0.2s linear;
+    border-radius: 8px;
+    color: #222;
+}
+
+.container__button:hover {
+    background-color: #262626;
+    border: 1px solid #d7d7d7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container__button.container__button--view-docs {
+    background: transparent;
+    color: white;
+    border: 1px solid transparent;
+}
+
+button.container__button--view-docs::before, 
+button.container__button--view-docs::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #3f3f3f;
+}
+
+
+button.container__button--view-docs span::before, 
+button.container__button--view-docs span::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #a4a4a4;
+}
+
+button.container__button--view-docs:hover::before, 
+button.container__button--view-docs:hover::after {
+    width: 100%;   
+}
+
+button.container__button--view-docs:hover span::before, 
+button.container__button--view-docs:hover span::after {
+    height: 100%;   
+}
+
 .code-container {
     background: radial-gradient(#444444, #000000);
     border: 1px solid #282828;
@@ -242,4 +299,59 @@ pre[class*="language-"] {
 .code-container_-content pre[class*="language-"] {
     padding: 10px;
     border-radius: 5px;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #4f4f4f;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+}
+
+
+@media (min-width: 500px) {
+    .code-container-bg-blur {
+        width: 110vw;
+    }
+}
+@media (mind-width: 500px) {
+    .header__inner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
 }
