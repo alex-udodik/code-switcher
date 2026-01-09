@@ -554,6 +554,7 @@ pre[class*="language-"].line-numbers>code {
 
 .footer {
     padding-top: 10rem;
+    padding-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -572,7 +573,7 @@ pre[class*="language-"].line-numbers>code {
     .footer__inner {
         margin-top: 1rem;
         overflow-y: hidden;
-        height: 155px;
+        min-height: 155px;
     }
 }
 
